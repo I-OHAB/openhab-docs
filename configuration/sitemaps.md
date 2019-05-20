@@ -533,6 +533,14 @@ The Item will be visible if any one of the comparisons is evaluated as `true`, o
 visibility=[Battery_Level<30]
 visibility=[TV_Power==ON]
 visibility=[Day_Time=="Morning", Day_Time=="Afternoon", Temperature>19]
+
+Switch item=LivingTVMute visibility=[LivingTVPower==ON]
+
+Frame label="Local Weather Station" visibility=[localStationId!="0"] {
+        Text item=localStationName
+        Text item=localStationId
+        Mapview item=localStationLocation
+}
 ```
 
 In the third example above, a control for a lawn sprinkler will be visible if it is Morning, *OR* if it is Afternoon, *OR* if the temperature is above 19 °C.
